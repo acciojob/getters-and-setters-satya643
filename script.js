@@ -1,31 +1,45 @@
-//complete this code
-class Animal {
-  constructor(species) {
-    this._species = species;
+// Person, Student, Teacher implementation
+
+class Person {
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
   }
 
-  get species() {
-    return this._species;
+  // getter for name
+  get name() {
+    return this._name;
   }
 
-  makeSound() {
-    console.log(`The ${this._species} makes a sound`);
+  // setter for name
+  set name(newName) {
+    this._name = newName;
+  }
+
+  // getter for age
+  get age() {
+    return this._age;
+  }
+
+  // setter for age
+  set age(newAge) {
+    this._age = newAge;
   }
 }
 
-class Dog extends Animal {
-  bark() {
-    console.log("woof");
+class Student extends Person {
+  study() {
+    console.log(`${this._name} is studying`);
   }
 }
 
-class Cat extends Animal {
-  purr() {
-    console.log("purr");
+class Teacher extends Person {
+  teach() {
+    console.log(`${this._name} is teaching`);
   }
 }
 
-// Do not change the code below this line
-window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+// expose to global scope for tests
+window.Person = Person;
+window.Student = Student;
+window.Teacher = Teacher;
